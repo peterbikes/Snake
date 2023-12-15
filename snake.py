@@ -217,23 +217,28 @@ class Game:
     def run(self):
         pygame.mixer.music.load("assets/sounds/snake_song")
         pygame.mixer.music.play(-1)
+        move = False
         while 1:
             self.draw_map()
             for event in pygame.event.get():
                 if event.type == KEYDOWN:
                     if event.key == K_ESCAPE:
                         exit()
-                    if (event.key == K_w or event.key == K_UP) and (self.snake.dir != "down"):
+                    if move == False and (event.key == K_w or event.key == K_UP) and (self.snake.dir != "down"):
                         self.snake.dir = "up"
-                    if (event.key == K_s or event.key == K_DOWN) and (self.snake.dir != "up"):
+                        move = True
+                    if move == False and (event.key == K_s or event.key == K_DOWN) and (self.snake.dir != "up"):
                         self.snake.dir = "down"
-                    if (event.key == K_a or event.key == K_LEFT) and (self.snake.dir != "right"):
+                        move = True
+                    if move == False and (event.key == K_a or event.key == K_LEFT) and (self.snake.dir != "right"):
                         self.snake.dir = "left"
-                    if (event.key == K_d or event.key == K_RIGHT) and (self.snake.dir != "left"):
+                        move = True
+                    if move == False and (event.key == K_d or event.key == K_RIGHT) and (self.snake.dir != "left"):
                         self.snake.dir = "right"
-
+                        move = True
             self.bug_handle()
             self.snake.move()
+            move = False
             self.update_body()
             self.check_colision()
             time.sleep(.1)
