@@ -17,6 +17,8 @@ You never played snake?
 
 It has sound 🔈
 
+<img src="./assets/images/snake.gif"/>
+
 --------
 LinkedIn: https://www.linkedin.com/in/pedrosmpm
 
