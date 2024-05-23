@@ -182,7 +182,7 @@ class Game:
     def check_colision(self):
         sound = random.choice(crash)
         if(self.snake.x < 40 or self.snake.x > 1240 or self.snake.y < 40 or self.snake.y > 840):
-            print("YOU LOST!")
+            print("YOU LOST! SCORE:", self.score)
             pygame.mixer.music.stop()
             pygame.mixer.Sound.play(sound)
             time.sleep(2)
@@ -190,7 +190,7 @@ class Game:
         i = 0
         while(i < len(self.body_count)):
             if(self.snake.x == self.body_count[i].x and self.snake.y == self.body_count[i].y):
-                print("YOU LOST!")
+                print("YOU LOST! SCORE:", self.score)
                 pygame.mixer.music.stop()
                 pygame.mixer.Sound.play(sound)
                 time.sleep(2)
