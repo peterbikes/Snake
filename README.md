@@ -5,8 +5,8 @@ Snake game made using Pygame.
 
 ## Instructions
 
-DEPENDENCIES:
-Python 3.11.2
+DEPENDENCIES: <br>
+Python 3.11.2 <br>
 pygame 2.1.2
 
 You never played snake?
